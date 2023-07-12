@@ -1,0 +1,127 @@
+{
+  "cards": [
+    {
+      "title": "first card",
+      "subtitle": "first card subtitle",
+      "description": "first card description",
+      "phone": "050-0000000",
+      "email": "first@gmail.com",
+      "web": "https://www.test.co.il",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "state": "",
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Shoken",
+        "houseNumber": "5",
+        "zip": ""
+      }
+    },
+    {
+      "title": "second card",
+      "subtitle": "second card subtitle",
+      "description": "second card description",
+      "phone": "050-0000000",
+      "email": "second@gmail.com",
+      "web": "https://www.test.co.il",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "state": "",
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Shoken",
+        "houseNumber": "5",
+        "zip": ""
+      }
+    },
+    {
+      "title": "third card",
+      "subtitle": "third card subtitle",
+      "description": "third card description",
+      "phone": "050-0000000",
+      "email": "third@gmail.com",
+      "web": "https://www.test.co.il",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "state": "",
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Shoken",
+        "houseNumber": "5",
+        "zip": ""
+      }
+    }
+  ],
+  "users": [
+    {
+      "name": {
+        "first": "regular",
+        "last": "user"
+      },
+      "phone": "050-1234567",
+      "email": "regular@gmail.com",
+      "password": "Aa1234!",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Alenby",
+        "houseNumber": 25
+      },
+      "isBusiness": false
+    },
+    {
+      "name": {
+        "first": "business",
+        "last": "user"
+      },
+      "phone": "050-1234567",
+      "email": "business@gmail.com",
+      "password": "Aa1234!",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Alenby",
+        "houseNumber": 25
+      },
+      "isBusiness": true
+    },
+    {
+      "name": {
+        "first": "admin",
+        "last": "user"
+      },
+      "phone": "050-1234567",
+      "email": "admin@gmail.com",
+      "password": "Aa1234!",
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "address": {
+        "country": "Israel",
+        "city": "Tel-Aviv",
+        "street": "Alenby",
+        "houseNumber": 25
+      },
+      "isBusiness": true,
+      "isAdmin": true
+    }
+  ]
+}
