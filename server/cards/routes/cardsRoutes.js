@@ -6,6 +6,7 @@ const {
   createCard,
   updateCard,
   likeCard,
+  changeBizNumber,
   deleteCard,
 } = require("../controllers/cardsController");
 const auth = require("../../auth/authService");
@@ -17,6 +18,7 @@ router.get("/:cardId", getCard);
 router.post("/", auth, createCard);
 router.put("/:cardId", auth, updateCard);
 router.patch("/:cardId", auth, likeCard);
+router.patch("/biz-number/:cardId", auth, changeBizNumber);
 router.delete("/:cardId", auth, deleteCard);
 
 module.exports = router;

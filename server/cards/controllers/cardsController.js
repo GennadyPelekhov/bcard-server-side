@@ -1,5 +1,7 @@
 const { handleError } = require("../../utils/handleErrors");
+const { isBizNumberExists } = require("../helpers/generateBizNumber");
 const normalizeCard = require("../helpers/normalizeCard");
+const validateBizNumber = require("../models/joi/validateBizNumber");
 const validateCard = require("../models/joi/validateCard");
 const Card = require("../models/mongodb/Card");
 
@@ -119,6 +121,40 @@ const likeCard = async (req, res) => {
   }
 };
 
+const changeBizNumber = async (req, res) => {
+  try {
+    const { cardId } = req.params;
+    const user = req.user;
+    const { bizNumber } = req.body;
+    if (!user.isAdmin)
+      throw new Error(
+        "You must be a Admin type user in order to change business number"
+      );
+      
+    const { error } = validateBizNumber(bizNumber);
+    if (error)
+      return handleError(res, 400, `Joi Error: ${error.details[0].message}`);
+
+    const isBizNumExists = await Card.findOne(
+      { bizNumber },
+      { bizNumber: 1, _id: 0 }
+    );
+    if (isBizNumExists)
+      throw new Error("Card with this Business number already exists");
+
+    const card = await Card.findByIdAndUpdate(
+      cardId,
+      { bizNumber },
+      { new: true }
+    );
+    if (!card)
+      throw new Error("A card with this ID cannot be found in the database");
+    return res.send(card);
+  } catch (error) {
+    return handleError(res, 404, `Mongoose Error: ${error.message}`);
+  }
+};
+
 const deleteCard = async (req, res) => {
   try {
     const { cardId } = req.params;
@@ -147,4 +183,5 @@ exports.getMyCards = getMyCards;
 exports.createCard = createCard;
 exports.updateCard = updateCard;
 exports.likeCard = likeCard;
+exports.changeBizNumber = changeBizNumber;
 exports.deleteCard = deleteCard;
