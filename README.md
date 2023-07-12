@@ -96,7 +96,7 @@ In the request body you will need to provide an object with the following keys a
 | password | string | 7   | 20  | required |
 
 - "email" must be a standard email
-- "password" must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
+- "password" must be at least seven characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
 
 ### Response
 
@@ -161,12 +161,12 @@ In the request body you will need to provide an object with the following keys a
 |            |         | zip         |        | 2   | 256 | required |
 | isBusiness | boolean |             |        |     |     | required |
 
-- The user "password" must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
+- The user "password" must be at least seven characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
 - "phone" must be a standard Israeli phone number
 - "email" must be a standard email
 - "image/url" must be a standard URL
 - You will need to provide a token to get an answer from this api
-- You need to be Admin to get an answer from this api
+- You need to be Registered user to get an answer from this api
 
 #### API for deleting a user
 
@@ -207,6 +207,7 @@ In the request body you will need to provide an object with the following keys a
 ```
 
 - You will need to provide a token to get an answer from this api
+- You will need to be the Business type user to get an answer from this api
 
 #### API for create a new business card
 
@@ -278,7 +279,7 @@ In the request body you will need to provide an object with the following keys a
 - "web" must be a standard URL
 - "image/url" must be a standard URL
 - You will need to provide a token to get an answer from this api
-- You will need to be a Business type user to get an answer from this api
+- You will need to be a user who created the card to get an answer from this api
 
 #### API for liking a business card
 
