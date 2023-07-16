@@ -10,7 +10,6 @@ const authorizedAPIs = [
 ];
 
 const options = (req, callback) => {
-  // console.log("in cors: ", req.headers.origin);
   const isExist = authorizedAPIs.find((api) => api === req.headers.origin);
   if (!isExist)
     return callback(

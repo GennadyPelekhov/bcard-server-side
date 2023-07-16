@@ -34,10 +34,6 @@ const generateInitialUsers = async () => {
       const { error } = registerValidation(user);
       if (error) throw new Error(`Joi Error: ${error.details[0].message}`);
 
-      //   const { email } = user;
-      //   const isUserExistInDB = await User.findOne({ email });
-      //   if (isUserExistInDB) throw new Error("User already registered");
-
       const normalizedUser = normalizeUser(user);
       const userToDB = new User(normalizedUser);
       await userToDB.save();

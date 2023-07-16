@@ -9,8 +9,6 @@ const generateAuthToken = (user) => {
   return token;
 };
 
-// const generateAuthToken = user => jwt.sign(user, KEY);
-
 const verifyToken = (tokenFromClient) => {
   try {
     const userPayload = jwt.verify(tokenFromClient, KEY);
@@ -19,8 +17,6 @@ const verifyToken = (tokenFromClient) => {
     return null;
   }
 };
-
-// const verifyToken = tokenFromClient => jwt.verify(tokenFromClient, KEY);
 
 exports.generateAuthToken = generateAuthToken;
 exports.verifyToken = verifyToken;

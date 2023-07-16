@@ -1,5 +1,4 @@
 const { handleError } = require("../../utils/handleErrors");
-const { isBizNumberExists } = require("../helpers/generateBizNumber");
 const normalizeCard = require("../helpers/normalizeCard");
 const validateBizNumber = require("../models/joi/validateBizNumber");
 const validateCard = require("../models/joi/validateCard");
@@ -130,7 +129,7 @@ const changeBizNumber = async (req, res) => {
       throw new Error(
         "You must be a Admin type user in order to change business number"
       );
-      
+
     const { error } = validateBizNumber(bizNumber);
     if (error)
       return handleError(res, 400, `Joi Error: ${error.details[0].message}`);
